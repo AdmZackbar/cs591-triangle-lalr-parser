@@ -1,0 +1,83 @@
+Program := Single-Command
+
+Command := Single-Command
+        | Command ; Single-Command
+
+Single-Command := V-Name := Expression
+                | Identifier ( Actual-Param-Sequence )
+                | IF Expression THEN Single-Command ELSE Single-Command
+                | WHILE Expression DO Single-Command
+                | LET Declaration IN Single-Command
+                | BEGIN Command END
+
+Expression := Secondary-Expression
+            | LET Declaration IN Expression
+            | IF Expression THEN Expression ELSE Expression
+
+Secondary-Expression := Primary-Expression
+            | Secondary-Expression Operator Primary-Expression
+
+Primary-Expression := Integer-Literal
+                    | Character-Literal
+                    | V-Name
+                    | Identifier ( Actual-Param-Sequence )
+                    | Operator Primary-Expression
+                    | ( Expression )
+                    | { Record-Aggregate }
+                    | [ Array-Aggregate ]
+
+Record-Aggregate := Identifier ~ Expression
+                  | Identifier ~ Expression , Record-Aggregate
+
+Array-Aggregate := Expression
+                 | Expression , Array-Aggregate
+
+V-Name := Identifier
+        | V-Name . Identifier
+        | V-Name [ Expression ]
+
+Declaration := Single-Declaration
+            | Declaration ; Single-Declaration
+
+Single-Declaration := CONST Identifier ~ Expression
+                    | VAR Identifier : Type-Denoter
+                    | PROC Identifier ( Formal-Param-Sequence ) ~ Single-Command
+                    | FUNC Identifier ( Formal-Param-Sequence ) : Type-Denoter ~ Expression
+                    | TYPE Identifier ~ Type-Denoter
+
+Formal-Param-Sequence := empty
+                       | Proper-Formal-Param-Sequence
+
+Proper-Formal-Param-Sequence := Formal-Param
+                              | Formal-Param , Proper-Formal-Param-Sequence
+
+Formal-Param := Identifier : Type-Denoter
+              | VAR Identifier : Type-Denoter
+              | PROC Identifier ( Formal-Param-Sequence )
+              | FUNC Identifier ( Formal-Param-Sequence ) : Type-Denoter
+
+Actual-Param-Sequence := empty
+                       | Proper-Actual-Param-Sequence
+
+Proper-Actual-Param-Sequence := Actual-Param
+                              | Actual-Param , Proper-Actual-Param-Sequence
+
+Actual-Param := Expression
+              | VAR V-Name
+              | PROC Identifier
+              | FUNC Identifier
+
+Type-Denoter := Identifier
+              | ARRAY Integer-Literal OF Type-Denoter
+              | RECORD Record-Type-Denoter END
+
+Record-Type-Denoter := Identifier : Type-Denoter
+                     | Identifier : Type-Denoter , Record-Type-Denoter
+
+Operator := + | - | * | / | < | > | = | \
+
+Identifier := Letter | Identifier Letter | Identifier Digit
+
+Integer-Literal := Digit | Integer-Literal Digit
+
+Comment := ! Graphic* EOL

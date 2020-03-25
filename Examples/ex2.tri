@@ -1,0 +1,7 @@
+let var a:Integer; var b:Integer; var c:Integer
+in begin
+   getint(var b);
+   getint(var c);
+   a:=(b-8)*(c+5);
+   putint(a*a)
+end

@@ -1,0 +1,7 @@
+let var b:Integer;
+    func g(z:Integer):Integer ~
+        if z>1 then z-1+g(z/3) else 5
+in begin
+   getint(var b);
+   putint(g(b+1))
+end

@@ -1,0 +1,31 @@
+let
+	var j: Integer;
+	var k: Integer;
+	var t: Integer;
+	var A: array 10 of Integer
+in begin
+	j:=0;
+	while j<10 do begin
+		A[j]:=(70*(j+1))//100;
+		j:=j+1
+	end;
+	j:=0;
+	while j<9 do begin		! bubble sort
+		k:=0;
+		while k<9 do begin
+			if A[k]>A[k+1] then begin
+				t:=A[k]; A[k]:=A[k+1]; A[k+1]:=t
+			end
+			else begin
+			end;
+			k:=k+1
+		end;
+		j:=j+1
+	end;
+	j:=0;
+	while j<10 do begin
+		putint(A[j]);
+		puteol( );
+		j:=j+1
+	end
+end

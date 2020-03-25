@@ -1,0 +1,33 @@
+let proc copy (x: Integer, var y: Integer) ~
+        begin
+            putint(x);
+            y:=x;
+        end;
+    proc doit (proc p(x: Integer, var y: Integer)) ~
+        let var n: Integer;
+            proc check(i: Integer, var j: Integer) ~
+                begin
+                    if i>=n then begin
+                        j:=i;
+                        putint(j);
+                        put(' ');
+                    end
+                    else begin
+                        j:=n;
+                        putint(j);
+                        put(' ');
+                        p(i, var n);
+                    end;
+                end
+        in begin
+            puteol( );
+            getint(var n);
+            if n>0 then begin
+                p(n, var n);
+                doit(proc check);
+                putint(n);
+                puteol( );
+            end
+            else puteol( );
+        end
+in doit(proc copy);

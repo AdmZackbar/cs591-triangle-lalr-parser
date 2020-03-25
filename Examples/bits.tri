@@ -1,0 +1,16 @@
+! sum the bits in binary value of x
+let
+	var x:Integer;
+	var y:Integer
+in begin
+	x:=maxint;
+	y:=0;
+	while x>0 do begin
+		if x/2*2<x then y:=y+1
+		else y:=y+0;    ! no skip cmd
+		x:=x/2
+	end;
+	putint(y)
+end
+
+! output = 15

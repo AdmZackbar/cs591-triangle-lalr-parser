@@ -1,0 +1,43 @@
+! File: example.tri
+! Desc: Use records and a procedure to demonstrate Triangle programming
+! Note: Exclamation mark is a comment
+
+let
+    type Date ~ record
+                   m: Integer, d: Integer
+		end;
+    proc ChangeMonth (var month : Integer) ~
+        begin
+            month := month - 1;
+            putint(month);
+            puteol( )
+        end;
+    var today : Date;
+    var J : Integer;
+    var I : Integer
+   
+in
+  begin
+
+    today.d := 14;
+    today.m := 6;
+    I := 31 - 3;
+
+    putint(today.m);
+    puteol( );
+    while today.m \= 1 do
+        ChangeMonth(var today.m);
+
+    J := 5;
+    while J <= 10 do
+        begin
+           if I = 5
+              then putint(0)
+           else if I = 6
+              then putint(1)
+           else putint(I);
+           puteol( );
+           I := J;
+           J := J + 1
+        end
+  end

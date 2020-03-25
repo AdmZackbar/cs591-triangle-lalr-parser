@@ -1,0 +1,7 @@
+let var a:Integer;
+    func f(x:Integer):Integer ~
+        if x>1 then x-1+f(x/2) else 5
+in begin
+   getint(var a);
+   putint(f(a+1))
+end

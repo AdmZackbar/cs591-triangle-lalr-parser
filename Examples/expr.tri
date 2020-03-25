@@ -1,0 +1,14 @@
+!   evaluates arithmetic expressions
+let
+    const m~10; const n~6; var p:Integer; var q:Integer; var flag:Boolean
+in begin
+    p:=m-3+n/2*(5+m*n/4);
+    putint(p);
+    q:=m-3+(n/2*(5+(m*n/4)));
+    putint(q);
+    if p=q then flag:=true else flag:=false;
+    if \flag then putint(1) else putint(0);
+    if (\flag)=flag then putint(1) else putint(0)
+end
+
+! output = 1326710

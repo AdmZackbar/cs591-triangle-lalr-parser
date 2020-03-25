@@ -1,0 +1,25 @@
+let
+
+    const a ~ 25;
+    var b : Integer
+
+in begin
+
+    b := 9999;
+    let
+        const c ~ a*a;
+        var d : Integer
+    in begin
+        d := a+c;
+        b := (d-550)*(d-450)
+    end;
+    putint(b)
+
+end
+
+! output = 20000
+
+
+
+
+

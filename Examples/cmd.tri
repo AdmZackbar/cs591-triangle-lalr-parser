@@ -1,0 +1,27 @@
+let
+	const size~10;
+	var index1: Integer;
+	var index2: Integer;
+	var answer: Integer
+in begin
+	answer:=0;
+	index1:=size;
+	while index1>0 do begin
+		if index1/2*2=index1 then begin
+			index2:=size;
+			while index2>0 do begin			! nested while
+				if index1<index2 then		! nested if
+					answer:=answer+2
+				else
+					answer:=answer+1;
+				index2:=index2-1
+			end
+		end
+		else
+			answer:=2*size+answer;
+		index1:=index1-1
+	end;
+	putint(answer)
+end
+
+! output = 170

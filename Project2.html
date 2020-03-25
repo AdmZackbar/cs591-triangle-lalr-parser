@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0046)http://cs434.cs.ua.edu/spring2020/project2.htm -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<title>CS 491/591 Projects</title>
+<style type="text/css">
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	}
+p.style271
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	}
+p.style22
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	}
+p.style28
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	}
+a:link
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;
+}
+ p.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	}
+.style1 {
+	font-family: Arial, sans-serif;
+	font-size: 13.5pt;
+}
+.style8 {
+	font-family: Arial, sans-serif;
+	font-size: 13.5pt;
+}
+.style9 {
+				font-family: Arial;
+}
+</style>
+</head>
+
+<body>
+
+<p><span class="style27"><b>
+<span style="font-size:36.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:red">CS 491/591</span></b></span><span class="apple-converted-space"><b><span style="font-size:36.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:red">&nbsp;</span></b></span><span class="style27"><b><span style="font-size:36.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:red">Programming Project 2</span></b></span></p>
+<p><b>
+<span style="font-size:18.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:red">Spring 2020</span></b></p>
+<p class="style271" style="font-family: Arial, sans-serif; font-size: 13.5pt">
+<span class="style8">Project 2 is required for CS 591 students, and is optional for CS 491 students</span><span style="font-size:13.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:black">.</span></p>
+<p class="style9"><u><b><span lang="en-us"><font size="5">Project </font></span></b></u>
+<span lang="en-us"><u><font size="5"><b>Description</b></font></u></span></p>
+
+<p class="style271" style="font-family: Arial, sans-serif; font-size: 13.5pt">
+Rewrite the lexical and syntactic phases of the Triangle compiler using Lex and 
+Yacc.&nbsp; You will need to modify the Triangle grammar so that it is LALR 1 
+rather than LL 1, because Yacc uses shift-reduce parsing rather than 
+recursive-descent.&nbsp; Given a syntactically-correct Triangle input program, 
+your new Triangle parser should write the grammar rules of a rightmost 
+derivation in reverse order to an output file.&nbsp; However, if the Triangle 
+input program contains any lexical or syntax errors, then your Triangle parser should 
+write one or more appropriate error messages to standard output.&nbsp; It is not 
+necessary to report other kinds of errors (such as type errors) or to generate TAM code.</p>
+
+<p class="style9"><u><span lang="en-us"><font size="5"><strong>Project Rules</strong></font></span></u></p>
+<p class="style271">
+<span class="style1">Your</span><span style="font-size:13.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:black"> project must compile and 
+run on the <a href="http://cs434.cs.ua.edu/spring2020/cs-parallel.htm">cs-parallel.ua.edu</a> server.</span></p>
+<p class="style271">
+<span style="font-size:13.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:black">All the code that appears in your program must be your 
+individual work with no assistance from others.&nbsp; Do not copy code from 
+other students, or from the web or any other source.&nbsp; Also do not share 
+your code with other students.&nbsp; If your program 
+violates these rules, you will not receive credit for the project, and the violation may also be reported as academic 
+misconduct.</span></p>
+<p class="style271">
+<span style="font-size:13.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:black">The project is officially due by April 17, but there is a 
+grace period so that you may submit without late penalty until April 24.&nbsp; Please send me an email message by 
+April 17 to schedule an 
+appointment for you to demonstrate your project during the last week of classes (April 
+20 to 24).&nbsp;
+<span style="font-size:13.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:black">Bring your laptop to my office, and a</span><span style="font-size:13.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:black"><span style="font-size:13.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:black">llow about 20 to 30 minutes for the demo</span></span><span style="font-size:13.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:black">.</span></span></p>
+<p class="style271">
+<span style="font-size:13.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:black">By April 24, upload a zip file to Blackboard that contains all 
+your source code and input/output files and compilation/usage instructions for each project.&nbsp; 
+Make sure the zip file contains the final version of your program that you want 
+graded.</span></p>
+
+
+
+
+</body></html>
