@@ -1,12 +1,13 @@
 
 %{
+/*
 enum Token {endfile,op,leftpar,rightpar,number,identifier,
 			begin,end,let,in,if_lit,then,else_lit,while_lit,do_lit,
 			semicolon,assignment,leftcurl,rightcurl,leftbrac,
 			rightbrac,tilde,comma,dot,const_lit,var,proc,func,colon,
 			type,array,of,record,character};
-
-int line=1, yylval;
+*/
+int line=1;
 %}
 
 digit		[0-9]
@@ -57,6 +58,7 @@ digit		[0-9]
 
 %%
 
+/*
 int main() {
     int token;
     do {
@@ -102,6 +104,7 @@ int main() {
     while (token);
     return 0;
 }
+*/
 
 int yywrap() {		/* wrap up normally at end-of-file (control-D) */
     return 1;
