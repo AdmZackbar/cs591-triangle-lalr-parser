@@ -3,7 +3,8 @@ Program := Single-Command
 Command := Single-Command
         | Command ; Single-Command
 
-Single-Command := V-Name := Expression
+Single-Command := empty
+                | V-Name := Expression
                 | Identifier ( Actual-Param-Sequence )
                 | IF Expression THEN Single-Command ELSE Single-Command
                 | WHILE Expression DO Single-Command

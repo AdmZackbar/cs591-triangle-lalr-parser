@@ -21,7 +21,8 @@ Command : SingleCommand { print("Command", "SingleCommand"); }
             { print("Command", "Command ; SingleCommand"); }
         ;
 
-SingleCommand : VName assignment Expression
+SingleCommand : /* empty */ { print("SingleCommand", "empty"); }
+              | VName assignment Expression
                 { print("SingleCommand", "VName := Expression"); }
               | identifier leftpar ActualParamSeq rightpar
                 { print("SingleCommand", "identifier ( ActualParamSeq )"); }
@@ -53,7 +54,7 @@ PrimaryExpression : number  { print("PrimaryExpression", "number"); }
                   | character   { print("PrimaryExpression", "character"); }
                   | VName   { print("PrimaryExpression", "VName"); }
                   | identifier leftpar ActualParamSeq rightpar
-                    { print("PrimaryExpression", "identifier leftpar ActualParamSeq rightpar"); }
+                    { print("PrimaryExpression", "identifier ( ActualParamSeq )"); }
                   | op PrimaryExpression
                     { print("PrimaryExpression", "op PrimaryExpression"); }
                   | leftpar Expression rightpar

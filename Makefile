@@ -11,4 +11,4 @@ parser : triangle_lexer.l triangle_parser.y
 
 .PHONY: clean
 clean :
-	rm -f lex.yy.c lexer y.tab.c parser
+	rm -f lex.yy.c scanner y.tab.c parser
