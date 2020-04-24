@@ -1,0 +1,168 @@
+TypeDenoter --> identifier
+TypeDenoter --> identifier
+RecordTypeDenoter --> identifier : TypeDenoter
+RecordTypeDenoter --> identifier : TypeDenoter , RecordTypeDenoter
+TypeDenoter --> RECORD RecordTypeDenoter END
+SingleCommand --> TYPE identifier ~ TypeDenoter
+Declaration --> SingleCommand
+TypeDenoter --> identifier
+FormalParam --> VAR identifier : TypeDenoter
+ProperFormalParamSeq --> FormalParam
+FormalParamSeq --> ProperFormalParamSeq
+VName --> identifier
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+PrimaryExpression --> number
+SecondaryExpression --> SecondaryExpression op PrimaryExpression
+Expression --> SecondaryExpression
+SingleCommand --> VName := Expression
+Command --> SingleCommand
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+Expression --> SecondaryExpression
+ActualParam --> Expression
+ProperActualParamSeq --> ActualParam
+ActualParamSeq --> ProperActualParamSeq
+SingleCommand --> identifier ( ActualParamSeq )
+Command --> Command ; SingleCommand
+ActualParamSeq --> empty
+SingleCommand --> identifier ( ActualParamSeq )
+Command --> Command ; SingleCommand
+SingleCommand --> BEGIN Command END
+SingleCommand --> PROC identifier ( FormalParamSeq ) ~ SingleCommand
+Declaration --> Declaration ; SingleCommand
+TypeDenoter --> identifier
+SingleCommand --> VAR identifier : TypeDenoter
+Declaration --> Declaration ; SingleCommand
+TypeDenoter --> identifier
+SingleCommand --> VAR identifier : TypeDenoter
+Declaration --> Declaration ; SingleCommand
+TypeDenoter --> identifier
+SingleCommand --> VAR identifier : TypeDenoter
+Declaration --> Declaration ; SingleCommand
+VName --> identifier
+VName --> VName . identifier
+PrimaryExpression --> number
+SecondaryExpression --> PrimaryExpression
+Expression --> SecondaryExpression
+SingleCommand --> VName := Expression
+Command --> SingleCommand
+VName --> identifier
+VName --> VName . identifier
+PrimaryExpression --> number
+SecondaryExpression --> PrimaryExpression
+Expression --> SecondaryExpression
+SingleCommand --> VName := Expression
+Command --> Command ; SingleCommand
+VName --> identifier
+PrimaryExpression --> number
+SecondaryExpression --> PrimaryExpression
+PrimaryExpression --> number
+SecondaryExpression --> SecondaryExpression op PrimaryExpression
+Expression --> SecondaryExpression
+SingleCommand --> VName := Expression
+Command --> Command ; SingleCommand
+VName --> identifier
+VName --> VName . identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+Expression --> SecondaryExpression
+ActualParam --> Expression
+ProperActualParamSeq --> ActualParam
+ActualParamSeq --> ProperActualParamSeq
+SingleCommand --> identifier ( ActualParamSeq )
+Command --> Command ; SingleCommand
+ActualParamSeq --> empty
+SingleCommand --> identifier ( ActualParamSeq )
+Command --> Command ; SingleCommand
+VName --> identifier
+VName --> VName . identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+PrimaryExpression --> number
+SecondaryExpression --> SecondaryExpression op PrimaryExpression
+Expression --> SecondaryExpression
+VName --> identifier
+VName --> VName . identifier
+ActualParam --> VAR VName
+ProperActualParamSeq --> ActualParam
+ActualParamSeq --> ProperActualParamSeq
+SingleCommand --> identifier ( ActualParamSeq )
+SingleCommand --> WHILE Expression DO SingleCommand
+Command --> Command ; SingleCommand
+VName --> identifier
+PrimaryExpression --> number
+SecondaryExpression --> PrimaryExpression
+Expression --> SecondaryExpression
+SingleCommand --> VName := Expression
+Command --> Command ; SingleCommand
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+PrimaryExpression --> number
+SecondaryExpression --> SecondaryExpression op PrimaryExpression
+Expression --> SecondaryExpression
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+PrimaryExpression --> number
+SecondaryExpression --> SecondaryExpression op PrimaryExpression
+Expression --> SecondaryExpression
+PrimaryExpression --> number
+SecondaryExpression --> PrimaryExpression
+Expression --> SecondaryExpression
+ActualParam --> Expression
+ProperActualParamSeq --> ActualParam
+ActualParamSeq --> ProperActualParamSeq
+SingleCommand --> identifier ( ActualParamSeq )
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+PrimaryExpression --> number
+SecondaryExpression --> SecondaryExpression op PrimaryExpression
+Expression --> SecondaryExpression
+PrimaryExpression --> number
+SecondaryExpression --> PrimaryExpression
+Expression --> SecondaryExpression
+ActualParam --> Expression
+ProperActualParamSeq --> ActualParam
+ActualParamSeq --> ProperActualParamSeq
+SingleCommand --> identifier ( ActualParamSeq )
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+Expression --> SecondaryExpression
+ActualParam --> Expression
+ProperActualParamSeq --> ActualParam
+ActualParamSeq --> ProperActualParamSeq
+SingleCommand --> identifier ( ActualParamSeq )
+SingleCommand --> IF Expression THEN SingleCommand ELSE SingleCommand
+SingleCommand --> IF Expression THEN SingleCommand ELSE SingleCommand
+Command --> SingleCommand
+ActualParamSeq --> empty
+SingleCommand --> identifier ( ActualParamSeq )
+Command --> Command ; SingleCommand
+VName --> identifier
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+Expression --> SecondaryExpression
+SingleCommand --> VName := Expression
+Command --> Command ; SingleCommand
+VName --> identifier
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+PrimaryExpression --> number
+SecondaryExpression --> SecondaryExpression op PrimaryExpression
+Expression --> SecondaryExpression
+SingleCommand --> VName := Expression
+Command --> Command ; SingleCommand
+SingleCommand --> BEGIN Command END
+SingleCommand --> WHILE Expression DO SingleCommand
+Command --> Command ; SingleCommand
+SingleCommand --> BEGIN Command END
+SingleCommand --> LET Declaration IN SingleCommand
+Program --> SingleCommand

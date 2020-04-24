@@ -1,0 +1,191 @@
+TypeDenoter --> identifier
+FormalParam --> identifier : TypeDenoter
+TypeDenoter --> identifier
+FormalParam --> VAR identifier : TypeDenoter
+ProperFormalParamSeq --> FormalParam
+ProperFormalParamSeq --> FormalParam , ProperFormalParamSeq
+FormalParamSeq --> ProperFormalParamSeq
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+Expression --> SecondaryExpression
+ActualParam --> Expression
+ProperActualParamSeq --> ActualParam
+ActualParamSeq --> ProperActualParamSeq
+SingleCommand --> identifier ( ActualParamSeq )
+Command --> SingleCommand
+VName --> identifier
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+Expression --> SecondaryExpression
+SingleCommand --> VName := Expression
+Command --> Command ; SingleCommand
+SingleCommand --> empty
+Command --> Command ; SingleCommand
+SingleCommand --> BEGIN Command END
+SingleCommand --> PROC identifier ( FormalParamSeq ) ~ SingleCommand
+Declaration --> SingleCommand
+TypeDenoter --> identifier
+FormalParam --> identifier : TypeDenoter
+TypeDenoter --> identifier
+FormalParam --> VAR identifier : TypeDenoter
+ProperFormalParamSeq --> FormalParam
+ProperFormalParamSeq --> FormalParam , ProperFormalParamSeq
+FormalParamSeq --> ProperFormalParamSeq
+FormalParam --> PROC identifier ( FormalParamSeq )
+ProperFormalParamSeq --> FormalParam
+FormalParamSeq --> ProperFormalParamSeq
+TypeDenoter --> identifier
+SingleCommand --> VAR identifier : TypeDenoter
+Declaration --> SingleCommand
+TypeDenoter --> identifier
+FormalParam --> identifier : TypeDenoter
+TypeDenoter --> identifier
+FormalParam --> VAR identifier : TypeDenoter
+ProperFormalParamSeq --> FormalParam
+ProperFormalParamSeq --> FormalParam , ProperFormalParamSeq
+FormalParamSeq --> ProperFormalParamSeq
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> SecondaryExpression op PrimaryExpression
+Expression --> SecondaryExpression
+VName --> identifier
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+Expression --> SecondaryExpression
+SingleCommand --> VName := Expression
+Command --> SingleCommand
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+Expression --> SecondaryExpression
+ActualParam --> Expression
+ProperActualParamSeq --> ActualParam
+ActualParamSeq --> ProperActualParamSeq
+SingleCommand --> identifier ( ActualParamSeq )
+Command --> Command ; SingleCommand
+PrimaryExpression --> character
+SecondaryExpression --> PrimaryExpression
+Expression --> SecondaryExpression
+ActualParam --> Expression
+ProperActualParamSeq --> ActualParam
+ActualParamSeq --> ProperActualParamSeq
+SingleCommand --> identifier ( ActualParamSeq )
+Command --> Command ; SingleCommand
+SingleCommand --> empty
+Command --> Command ; SingleCommand
+SingleCommand --> BEGIN Command END
+VName --> identifier
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+Expression --> SecondaryExpression
+SingleCommand --> VName := Expression
+Command --> SingleCommand
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+Expression --> SecondaryExpression
+ActualParam --> Expression
+ProperActualParamSeq --> ActualParam
+ActualParamSeq --> ProperActualParamSeq
+SingleCommand --> identifier ( ActualParamSeq )
+Command --> Command ; SingleCommand
+PrimaryExpression --> character
+SecondaryExpression --> PrimaryExpression
+Expression --> SecondaryExpression
+ActualParam --> Expression
+ProperActualParamSeq --> ActualParam
+ActualParamSeq --> ProperActualParamSeq
+SingleCommand --> identifier ( ActualParamSeq )
+Command --> Command ; SingleCommand
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+Expression --> SecondaryExpression
+ActualParam --> Expression
+VName --> identifier
+ActualParam --> VAR VName
+ProperActualParamSeq --> ActualParam
+ProperActualParamSeq --> ActualParam , ProperActualParamSeq
+ActualParamSeq --> ProperActualParamSeq
+SingleCommand --> identifier ( ActualParamSeq )
+Command --> Command ; SingleCommand
+SingleCommand --> empty
+Command --> Command ; SingleCommand
+SingleCommand --> BEGIN Command END
+SingleCommand --> IF Expression THEN SingleCommand ELSE SingleCommand
+Command --> SingleCommand
+SingleCommand --> empty
+Command --> Command ; SingleCommand
+SingleCommand --> BEGIN Command END
+SingleCommand --> PROC identifier ( FormalParamSeq ) ~ SingleCommand
+Declaration --> Declaration ; SingleCommand
+ActualParamSeq --> empty
+SingleCommand --> identifier ( ActualParamSeq )
+Command --> SingleCommand
+VName --> identifier
+ActualParam --> VAR VName
+ProperActualParamSeq --> ActualParam
+ActualParamSeq --> ProperActualParamSeq
+SingleCommand --> identifier ( ActualParamSeq )
+Command --> Command ; SingleCommand
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+PrimaryExpression --> number
+SecondaryExpression --> SecondaryExpression op PrimaryExpression
+Expression --> SecondaryExpression
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+Expression --> SecondaryExpression
+ActualParam --> Expression
+VName --> identifier
+ActualParam --> VAR VName
+ProperActualParamSeq --> ActualParam
+ProperActualParamSeq --> ActualParam , ProperActualParamSeq
+ActualParamSeq --> ProperActualParamSeq
+SingleCommand --> identifier ( ActualParamSeq )
+Command --> SingleCommand
+ActualParam --> PROC identifier
+ProperActualParamSeq --> ActualParam
+ActualParamSeq --> ProperActualParamSeq
+SingleCommand --> identifier ( ActualParamSeq )
+Command --> Command ; SingleCommand
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+Expression --> SecondaryExpression
+ActualParam --> Expression
+ProperActualParamSeq --> ActualParam
+ActualParamSeq --> ProperActualParamSeq
+SingleCommand --> identifier ( ActualParamSeq )
+Command --> Command ; SingleCommand
+ActualParamSeq --> empty
+SingleCommand --> identifier ( ActualParamSeq )
+Command --> Command ; SingleCommand
+SingleCommand --> empty
+Command --> Command ; SingleCommand
+SingleCommand --> BEGIN Command END
+ActualParamSeq --> empty
+SingleCommand --> identifier ( ActualParamSeq )
+SingleCommand --> IF Expression THEN SingleCommand ELSE SingleCommand
+Command --> Command ; SingleCommand
+SingleCommand --> empty
+Command --> Command ; SingleCommand
+SingleCommand --> BEGIN Command END
+SingleCommand --> LET Declaration IN SingleCommand
+SingleCommand --> PROC identifier ( FormalParamSeq ) ~ SingleCommand
+Declaration --> Declaration ; SingleCommand
+ActualParam --> PROC identifier
+ProperActualParamSeq --> ActualParam
+ActualParamSeq --> ProperActualParamSeq
+SingleCommand --> identifier ( ActualParamSeq )
+SingleCommand --> LET Declaration IN SingleCommand
+Program --> SingleCommand

@@ -1,0 +1,8 @@
+! No declarations
+let 
+in begin
+	 getint(var a);
+	 getint(var b);
+	 c:=(a+7)*(b-6);
+	 putint(c*c)
+end

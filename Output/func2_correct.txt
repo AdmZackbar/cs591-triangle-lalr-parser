@@ -1,0 +1,63 @@
+TypeDenoter --> identifier
+SingleCommand --> VAR identifier : TypeDenoter
+Declaration --> SingleCommand
+TypeDenoter --> identifier
+FormalParam --> identifier : TypeDenoter
+ProperFormalParamSeq --> FormalParam
+FormalParamSeq --> ProperFormalParamSeq
+TypeDenoter --> identifier
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+PrimaryExpression --> number
+SecondaryExpression --> SecondaryExpression op PrimaryExpression
+Expression --> SecondaryExpression
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+PrimaryExpression --> number
+SecondaryExpression --> SecondaryExpression op PrimaryExpression
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+PrimaryExpression --> number
+SecondaryExpression --> SecondaryExpression op PrimaryExpression
+Expression --> SecondaryExpression
+ActualParam --> Expression
+ProperActualParamSeq --> ActualParam
+ActualParamSeq --> ProperActualParamSeq
+PrimaryExpression --> identifier ( ActualParamSeq )
+SecondaryExpression --> SecondaryExpression op PrimaryExpression
+Expression --> SecondaryExpression
+PrimaryExpression --> number
+SecondaryExpression --> PrimaryExpression
+Expression --> SecondaryExpression
+Expression --> IF Expression THEN Expression ELSE Expression
+SingleCommand --> FUNC identifier ( FormalParamSeq ) : TypeDenoter ~ Expression
+Declaration --> Declaration ; SingleCommand
+VName --> identifier
+ActualParam --> VAR VName
+ProperActualParamSeq --> ActualParam
+ActualParamSeq --> ProperActualParamSeq
+SingleCommand --> identifier ( ActualParamSeq )
+Command --> SingleCommand
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+PrimaryExpression --> number
+SecondaryExpression --> SecondaryExpression op PrimaryExpression
+Expression --> SecondaryExpression
+ActualParam --> Expression
+ProperActualParamSeq --> ActualParam
+ActualParamSeq --> ProperActualParamSeq
+PrimaryExpression --> identifier ( ActualParamSeq )
+SecondaryExpression --> PrimaryExpression
+Expression --> SecondaryExpression
+ActualParam --> Expression
+ProperActualParamSeq --> ActualParam
+ActualParamSeq --> ProperActualParamSeq
+SingleCommand --> identifier ( ActualParamSeq )
+Command --> Command ; SingleCommand
+SingleCommand --> BEGIN Command END
+SingleCommand --> LET Declaration IN SingleCommand
+Program --> SingleCommand

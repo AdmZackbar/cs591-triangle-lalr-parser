@@ -1,0 +1,56 @@
+TypeDenoter --> identifier
+SingleCommand --> VAR identifier : TypeDenoter
+Declaration --> SingleCommand
+TypeDenoter --> identifier
+SingleCommand --> VAR identifier : TypeDenoter
+Declaration --> Declaration ; SingleCommand
+TypeDenoter --> identifier
+SingleCommand --> VAR identifier : TypeDenoter
+Declaration --> Declaration ; SingleCommand
+VName --> identifier
+ActualParam --> VAR VName
+ProperActualParamSeq --> ActualParam
+ActualParamSeq --> ProperActualParamSeq
+SingleCommand --> identifier ( ActualParamSeq )
+Command --> SingleCommand
+VName --> identifier
+ActualParam --> VAR VName
+ProperActualParamSeq --> ActualParam
+ActualParamSeq --> ProperActualParamSeq
+SingleCommand --> identifier ( ActualParamSeq )
+Command --> Command ; SingleCommand
+VName --> identifier
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+PrimaryExpression --> number
+SecondaryExpression --> SecondaryExpression op PrimaryExpression
+Expression --> SecondaryExpression
+PrimaryExpression --> ( Expression )
+SecondaryExpression --> PrimaryExpression
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+PrimaryExpression --> number
+SecondaryExpression --> SecondaryExpression op PrimaryExpression
+Expression --> SecondaryExpression
+PrimaryExpression --> ( Expression )
+SecondaryExpression --> SecondaryExpression op PrimaryExpression
+Expression --> SecondaryExpression
+SingleCommand --> VName := Expression
+Command --> Command ; SingleCommand
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> PrimaryExpression
+VName --> identifier
+PrimaryExpression --> VName
+SecondaryExpression --> SecondaryExpression op PrimaryExpression
+Expression --> SecondaryExpression
+ActualParam --> Expression
+ProperActualParamSeq --> ActualParam
+ActualParamSeq --> ProperActualParamSeq
+SingleCommand --> identifier ( ActualParamSeq )
+Command --> Command ; SingleCommand
+SingleCommand --> BEGIN Command END
+SingleCommand --> LET Declaration IN SingleCommand
+Program --> SingleCommand

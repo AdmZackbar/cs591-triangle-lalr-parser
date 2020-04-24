@@ -30,4 +30,4 @@ let proc copy (x: Integer, var y: Integer) ~
             end
             else puteol( );
         end
-in doit(proc copy);
+in doit(proc copy)

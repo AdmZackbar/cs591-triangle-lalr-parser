@@ -1,0 +1,8 @@
+let var a:Integer; var b:Integer; var c:Integer
+in begin
+	! Bad variable name
+	getint(var a03-);
+	getint(var b);
+	c:=(a+7)*(b-6);
+	putint(c*c)
+end
